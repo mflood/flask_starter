@@ -5,15 +5,15 @@ import logging
 from flask import Flask
 from flask import render_template
 
-import my_flask_app.mylogging as mylogging
+import my_flask_app.mylogging as mylog
 
 # lowercase app is standard name for flask app
 # pylint: disable=invalid-name
 app = Flask(__name__)
 
 # setup logging
-mylogging.init(logging.DEBUG)
-logger = logging.getLogger(mylogging.LOGNAME)
+mylog.init(logging.DEBUG)
+logger = logging.getLogger(mylog.LOGNAME)
 
 @app.route("/")
 def index():
@@ -23,3 +23,4 @@ def index():
     logger.debug("Rendering index.html")
     return render_template('index.html')
 
+# end

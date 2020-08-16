@@ -1,7 +1,14 @@
+"""
+    tests for mylogging
+"""
 import logging
-import my_flask_app.mylogging as mylogging
+import my_flask_app.mylogging as mylog
 
 def test_global_init():
-    mylogging.init(logging.DEBUG)
-    logging.getLogger(mylogging.LOGNAME).info("worked")
+    """
+        Test init() method
+    """
+    mylog.init(logging.DEBUG)
+    logging.getLogger(mylog.LOGNAME).info("worked")
 
+# end
